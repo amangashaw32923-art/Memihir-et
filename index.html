@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="topbar">
+        <div>
+            <h1>Student Dashboard</h1>
+            <p>MemhirET School Management</p>
+        </div>
+
+        <nav>
+            <a href="#">Dashboard</a>
+            <a href="#students">Students</a>
+            <a href="#enroll-form">Enrollment</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="stats">
+            <div class="stat-card">
+                <span class="stat-number" id="total-count">0</span>
+                <span class="stat-label">Total Students</span>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-number" id="avg-score">0</span>
+                <span class="stat-label">Average Grade</span>
+            </div>
+
+            <div class="stat-card">
+                <span class="stat-number" id="active-count">0</span>
+                <span class="stat-label">Active Students</span>
+            </div>
+        </section>
+
+        <section class="controls" id="students">
+            <div>
+                <label for="grade-filter">Filter by grade:</label>
+                <select id="grade-filter">
+                    <option value="all">All grades</option>
+                    <option value="9">Grade 9</option>
+                    <option value="10">Grade 10</option>
+                    <option value="11">Grade 11</option>
+                    <option value="12">Grade 12</option>
+                </select>
+            </div>
+
+            <button id="add-btn">+ Enroll Student</button>
+        </section>
+
+        <section class="table-card">
+            <h2>Students</h2>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Grade</th>
+                            <th>Score</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="student-body"></tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="enroll-form" class="form-card hidden">
+            <h2>Enroll New Student</h2>
+            <p>Add a new student to the dashboard.</p>
+
+            <div id="error-msg" class="error hidden"></div>
+
+            <div class="form-grid">
+                <label>
+                    Name
+                    <input type="text" id="inp-name" placeholder="Student name">
+                </label>
+
+                <label>
+                    Email
+                    <input type="email" id="inp-email" placeholder="student@email.com">
+                </label>
+
+                <label>
+                    Grade
+                    <input type="number" id="inp-grade" min="9" max="12" placeholder="9-12">
+                </label>
+
+                <label>
+                    Score
+                    <input type="number" id="inp-score" min="0" max="100" placeholder="0-100">
+                </label>
+            </div>
+
+            <button id="submit-btn">Enroll Student</button>
+        </section>
+    </main>
+
+    <footer>
+        <p>MemhirET Intern Program - Week Project</p>
+    </footer>
+
+    <script src="app.js"></script>
+</body>
+</html>
